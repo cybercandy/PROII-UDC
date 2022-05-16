@@ -1,0 +1,39 @@
+Errores Práctica 2
+
+
+<-- TAD/ADT  -->
+
+	[R]emove no funciona correctamente:>> interrupción abrupta de la ejecución con lista de productos vacía
+
+	script_completo/remove_empty.txt FAIL
+
+		>> violación de la preCD de first()/getItem/… al no haber comprobado al inicio que la lista no está vacía
+
+	[] se olvidan de hacer updateItem() tras haber vaciado la pila previamente a un deleteAtPosition(), lo que resulta en una violación de la preCD de éste
+		>> delete()
+		>> award()
+
+<-- FUNCIONAMIENTO/FUNCTIONING  -->
+
+	[] remove(): diferencia menor de formato
+		>> 1 decimal vs. 2 decimales (en el mensaje de salida):
+
+		********************08 B: product product3 bidder user1 price 25.0* Bid: product product3 bidder user1 category book price 25.00 bids 1
+
+		OBTENIDA (script_completo/remove_inter_output.txt):
+
+		********************08 B: product product3 bidder user1 price 25.0* Bid: product product3 bidder user1 category book price 25.0 bids 1
+
+	[] (computa x2: FUNCIONAMIENTO + TAD) 
+
+		[R]emove no funciona:>> interrupción abrupta de la ejecución con lista vacíascript_completo/remove_empty.txt 
+
+			FAIL>> violación de la preCD de first()/getItem/… al no haber comprobado al inicio que la lista no está vacía
+
+
+<-- EFICIENCIA/EFFICIENCY  -->
+
+[] llamadas reiteradas innecesarias a atof() en vez de guardar temporalmente el resultado en una variable
+
+		>> bid()
+
